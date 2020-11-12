@@ -1,0 +1,8 @@
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\bin\Debug\netcoreapp3.1\DataStructure_2Lib.deps.json
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\bin\Debug\netcoreapp3.1\DataStructure_2Lib.dll
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\bin\Debug\netcoreapp3.1\DataStructure_2Lib.pdb
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\obj\Debug\netcoreapp3.1\DataStructure_2Lib.csprojAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\obj\Debug\netcoreapp3.1\DataStructure_2Lib.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\obj\Debug\netcoreapp3.1\DataStructure_2Lib.AssemblyInfo.cs
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\obj\Debug\netcoreapp3.1\DataStructure_2Lib.dll
+C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2Lib\obj\Debug\netcoreapp3.1\DataStructure_2Lib.pdb
