@@ -155,11 +155,16 @@ namespace LLTests
                 Assert.Throws<IndexOutOfRangeException>(() => actual[index] = value);
             }
 
-            [Test]
-            public void ReverseTest()
+            [TestCase(new int[] { 1, 2, 3, 4}, new int[] { 4, 3, 2, 1 })]
+            public void ReverseTest(int[] arrayForActual, int[] arrayForExpected)
             {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
 
-            }//ме ядекюмн
+                actual.Reverse();
+
+                Assert.AreEqual(expected, actual);
+            }
 
             [TestCase(new int[] { 1, 4, 8, 5 }, 8)]
             [TestCase(new int[] { 1, -4, 8, 5 }, 8)]

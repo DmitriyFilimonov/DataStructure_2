@@ -132,10 +132,12 @@ namespace DataStructure_2Lib.LL
                 return;
             }
 
-            Node current = _root.Next;//запись в current ссылки на на второй элемент
-            _root = current;//замена ссылки на первый элемент ссылкой на второй элемент
+            //Node current = _root.Next;//запись в current ссылки на на второй элемент
+            //_root = current;//замена ссылки на первый элемент ссылкой на второй элемент
 
-            // current.Next?.Dispose();// если Next == null
+            //current.Next?.Dispose();// если Next == null
+
+            _root = _root.Next;
 
             Length--;
         }
@@ -195,7 +197,18 @@ namespace DataStructure_2Lib.LL
 
         public void Reverse()
         {
-            
+            Node current = new Node();
+            Node runner = new Node();
+            Node pre = new Node();
+            current = _root;
+            while(current!=null)
+            {
+                runner = current.Next;
+                current.Next = pre;
+                pre = current;
+                _root = current;
+                current = runner;
+            }
         }
         
         public int GetMaxElement()
@@ -315,6 +328,11 @@ namespace DataStructure_2Lib.LL
             while (current.Next != null);
 
             return indexMin;
+        }
+
+        public void SortAscend()
+        {
+            
         }
 
         public override bool Equals(object obj)
