@@ -9,6 +9,38 @@ namespace LLTests
     {
         public class LinkedListTests
         {
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 2, 3, new int[] { 1, 2, 4, 3, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 1, 3, new int[] { 1, 4, 3, 2, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 2, 4, new int[] { 1, 2, 5, 4, 3 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 0, 3, new int[] { 4, 2, 3, 1, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 0, 4, new int[] { 5, 2, 3, 4, 1 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 0, 1, new int[] { 2, 1, 3, 4, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 3, 4, new int[] { 1, 2, 3, 5, 4 })]
+
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 3, 2, new int[] { 1, 2, 4, 3, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 3, 1, new int[] { 1, 4, 3, 2, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 4, 2, new int[] { 1, 2, 5, 4, 3 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 3, 0, new int[] { 4, 2, 3, 1, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 4, 0, new int[] { 5, 2, 3, 4, 1 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 1, 0, new int[] { 2, 1, 3, 4, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 4, 3, new int[] { 1, 2, 3, 5, 4 })]
+
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 3, 3, new int[] { 1, 2, 3, 4, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 0, 0, new int[] { 1, 2, 3, 4, 5 })]
+            [TestCase(new int[] { 1, 2, 3, 4, 5 }, 4, 4, new int[] { 1, 2, 3, 4, 5 })]
+
+            [TestCase(new int[] { 1, 2 }, 0, 1, new int[] { 2, 1 })]
+            [TestCase(new int[] { 1 }, 0, 0, new int[] { 1 })]
+            public void SwapTest(int[] a, int i1, int i2, int[] b)
+            {
+                LinkedList expected = new LinkedList(b);
+                LinkedList actual = new LinkedList(a);
+
+                actual.Swap(i1, i2);
+
+                Assert.AreEqual(expected, actual);
+            }
+            
             [TestCase(new int[] { 1, 2, 3 }, 1, 4, new int[] { 1, 4, 2, 3 })]
             [TestCase(new int[] { 1, 2, 3 }, 0, 4, new int[] { 4, 1, 2, 3 })]
             [TestCase(new int[] { 1, 2, 3 }, 3, 4, new int[] { 1, 2, 3, 4 })]

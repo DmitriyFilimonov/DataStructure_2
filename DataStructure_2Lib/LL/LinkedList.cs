@@ -212,6 +212,61 @@ namespace DataStructure_2Lib.LL
                 current = runner;
             }
         }
+
+        public void Swap(int indexFirst, int indexSecond)
+        {
+            Node preIndex1 = new Node();
+            Node index1 = new Node();
+            Node preIndex2 = new Node();
+            Node index2 = new Node();
+            Node current = new Node();
+            Node preRunner1;
+            Node runner2;
+            Node pre1 = new Node();
+            Node pre2 = new Node();
+
+            pre1.Next = _root;
+            pre2.Next = _root;
+            current = _root;
+            int iteration = -1;
+
+            if (indexFirst > indexSecond)
+            {
+                int a = indexFirst;
+                indexFirst = indexSecond;
+                indexSecond = a;
+            }
+
+            while (current!=null)
+            {
+                Node runner = current.Next;
+
+                if (iteration == indexFirst-1)
+                {
+                    preIndex1 = pre1;
+                    preRunner1 = preIndex1.Next;
+                    index1 = current;
+                    
+                }
+                pre1 = current;
+
+                if (iteration == indexSecond-1)
+                {
+                    preIndex2 = pre2;
+                    index2 = current;
+                    runner2 = index2.Next;
+                    preIndex1.Next = index2;
+                    preIndex2.Next = index1;
+                    index2.Next = index1.Next;
+                    index1.Next = runner2;
+                }
+
+                pre2 = current;
+
+                iteration++;
+                current = runner;
+            }
+        }
         
         public int GetMaxElement()
         {
