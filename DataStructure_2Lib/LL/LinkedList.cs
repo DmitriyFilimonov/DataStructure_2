@@ -200,6 +200,8 @@ namespace DataStructure_2Lib.LL
             Node current = new Node();
             Node runner = new Node();
             Node pre = new Node();
+            pre.Next = _root;//в строке нет необходимости, но с ней работает 
+            //строка 203 - для наглядности того, что список ограничен null-ами
             current = _root;
             while(current!=null)
             {
