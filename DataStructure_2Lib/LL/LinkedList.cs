@@ -215,18 +215,17 @@ namespace DataStructure_2Lib.LL
 
         public void Swap(int indexFirst, int indexSecond)
         {
-            Node preIndex1 = new Node();
-            Node index1 = new Node();
-            Node preIndex2 = new Node();
-            Node index2 = new Node();
+            Node previousFromIndex1 = new Node();
+            Node tmpIndex1 = new Node();
+            Node previousFromIndex2 = new Node();
+            Node tmpIndex2 = new Node();
+            Node tmpNextFromIndex2;
             Node current = new Node();
-            Node preRunner1;
-            Node runner2;
-            Node pre1 = new Node();
-            Node pre2 = new Node();
+            Node tmpPreviousFromCurrentForIndex1 = new Node();
+            Node tmpPreviousFromCurrentForIndex2 = new Node();
 
-            pre1.Next = _root;
-            pre2.Next = _root;
+            tmpPreviousFromCurrentForIndex1.Next = _root;//в первый итерации предудщий элемент - null
+            tmpPreviousFromCurrentForIndex2.Next = _root;//в первый итерации предудщий элемент - null
             current = _root;
             int iteration = -1;
 
@@ -239,32 +238,39 @@ namespace DataStructure_2Lib.LL
 
             while (current!=null)
             {
-                Node runner = current.Next;
+                Node iterationChanger = current.Next;
 
                 if (iteration == indexFirst-1)
                 {
-                    preIndex1 = pre1;
-                    preRunner1 = preIndex1.Next;
-                    index1 = current;
+                    previousFromIndex1 = tmpPreviousFromCurrentForIndex1;
+                    tmpIndex1 = current;
                     
                 }
-                pre1 = current;
+                tmpPreviousFromCurrentForIndex1 = current;
 
                 if (iteration == indexSecond-1)
                 {
-                    preIndex2 = pre2;
-                    index2 = current;
-                    runner2 = index2.Next;
-                    preIndex1.Next = index2;
-                    preIndex2.Next = index1;
-                    index2.Next = index1.Next;
-                    index1.Next = runner2;
+                    previousFromIndex2 = tmpPreviousFromCurrentForIndex2;
+                    tmpIndex2 = current;
+                    tmpNextFromIndex2 = tmpIndex2.Next;
+                    
+                    if (indexFirst==0)
+                    {
+                        _root=tmpIndex2;
+                    }
+                    else
+                    {
+                        previousFromIndex1.Next = tmpIndex2;
+                    }
+                    previousFromIndex2.Next = tmpIndex1;
+                    tmpIndex2.Next = tmpIndex1.Next;
+                    tmpIndex1.Next = tmpNextFromIndex2;
                 }
 
-                pre2 = current;
+                tmpPreviousFromCurrentForIndex2 = current;
 
                 iteration++;
-                current = runner;
+                current = iterationChanger;
             }
         }
         
