@@ -40,7 +40,7 @@ namespace LLTests
 
                 Assert.AreEqual(expected, actual);
             }
-            
+
             [TestCase(new int[] { 1, 2, 3 }, 1, 4, new int[] { 1, 4, 2, 3 })]
             [TestCase(new int[] { 1, 2, 3 }, 0, 4, new int[] { 4, 1, 2, 3 })]
             [TestCase(new int[] { 1, 2, 3 }, 3, 4, new int[] { 1, 2, 3, 4 })]
@@ -187,7 +187,7 @@ namespace LLTests
                 Assert.Throws<IndexOutOfRangeException>(() => actual[index] = value);
             }
 
-            [TestCase(new int[] { 1, 2, 3, 4}, new int[] { 4, 3, 2, 1 })]
+            [TestCase(new int[] { 1, 2, 3, 4 }, new int[] { 4, 3, 2, 1 })]
             public void ReverseTest(int[] arrayForActual, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
@@ -253,8 +253,8 @@ namespace LLTests
 
 
                 Assert.AreEqual(expected, actual.GetIndexOfMaxElement());
-            } 
-            
+            }
+
             [TestCase(new int[] { -4 }, 0)]
             [TestCase(new int[] { 0 }, 0)]
             [TestCase(new int[] { 1, 0, -1, 3 }, 2)]
@@ -267,6 +267,16 @@ namespace LLTests
                 Assert.AreEqual(expected, actual.GetIndexOfMinElement());
             }
 
+            [TestCase(new int[] {3, 2, 4}, new int[] { 2, 3, 4})]
+            public void SortAscendText(int[] arrayForActual, int[] expectedArray)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(expectedArray);
+
+                actual.SortAscend();
+
+                Assert.AreEqual(expected, actual);
+            }
         }
     }
 }

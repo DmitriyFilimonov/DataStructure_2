@@ -395,7 +395,19 @@ namespace DataStructure_2Lib.LL
 
         public void SortAscend()
         {
-            
+            Node tmpLinkToShiftingElemnt;
+            Node shiftingElemnt;
+            Node nextAfterShifting;
+
+            if (_root.Value>_root.Next.Value)
+            {
+                shiftingElemnt = _root;
+                nextAfterShifting = _root.Next;
+                tmpLinkToShiftingElemnt = _root.Next;
+                _root = _root.Next;
+                _root.Next = nextAfterShifting;
+
+            }
         }
 
         public override bool Equals(object obj)
