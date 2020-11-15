@@ -490,6 +490,69 @@ namespace DataStructure_2Lib.LL
             }
         }
 
+        public void DeleteFirstByValue(int value)
+        {
+
+            if (Length > 0)
+
+            {
+                Node current = new Node();
+                current = _root;
+                if (_root.Value == value)
+                {
+                    _root = _root.Next;
+                    Length--;
+                    return;
+                }
+
+                while (current.Next.Value != value)
+                {
+                    
+                    current = current.Next;
+                }
+                current.Next = current.Next.Next;
+                Length--;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void DeleteAllByValue(int value)
+        {
+            
+            if (Length > 0)
+
+            {
+                Node current = new Node();
+                current = _root;
+                if (_root.Value == value)
+                {
+                    _root = _root.Next;
+                    Length--;
+                    current = _root;
+                }
+
+                while (current.Next != null)
+                {
+                    if (current.Next.Value == value)
+                    {
+                        current.Next = current.Next.Next;
+                        Length--;
+                    }
+                    if (current.Next != null)
+                    {
+                        current = current.Next;
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public override bool Equals(object obj)
         {
             LinkedList linkedList = (LinkedList)obj;

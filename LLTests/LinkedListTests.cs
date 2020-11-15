@@ -267,12 +267,12 @@ namespace LLTests
                 Assert.AreEqual(expected, actual.GetIndexOfMinElement());
             }
 
-            [TestCase(new int[] {3, 2, 4}, new int[] { 2, 3, 4})]
+            [TestCase(new int[] { 3, 2, 4 }, new int[] { 2, 3, 4 })]
             [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 1, 3, 4, 5 })]
             [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 1, 3, 4, 5 })]
             [TestCase(new int[] { 4, 1, 2, 5, 4 }, new int[] { 1, 2, 4, 4, 5 })]
             [TestCase(new int[] { }, new int[] { })]
-            [TestCase(new int[] { 1}, new int[] { 1})]
+            [TestCase(new int[] { 1 }, new int[] { 1 })]
             [TestCase(new int[] { 2, 1 }, new int[] { 1, 2 })]
             [TestCase(new int[] { 1, 2, 8, 7, 6, 0 }, new int[] { 0, 1, 2, 6, 7, 8 })]
             public void SortAscendTest(int[] arrayForActual, int[] expectedArray)
@@ -298,6 +298,35 @@ namespace LLTests
                 LinkedList expected = new LinkedList(expectedArray);
 
                 actual.SortDescend();
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { 2, 1, 3, 2, 1 }, 2, new int[] { 1, 3, 2, 1 })]
+            [TestCase(new int[] { 2, 1, 3, 2, 1 }, 3, new int[] { 2, 1, 2, 1 })]
+            [TestCase(new int[] { 2, 1, 3, 2, 4 }, 4, new int[] { 2, 1, 3, 2 })]
+            [TestCase(new int[] { 2, 8, 3, 2, 1 }, 1, new int[] { 2, 8, 3, 2 })]
+            [TestCase(new int[] { }, 3, new int[] { })]
+            public void DeleteFirstByValue(int[] arrayForActual, int value, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.DeleteFirstByValue(value);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { 2, 1, 3, 2, 1 }, 2, new int[] { 1, 3, 1 })]
+            [TestCase(new int[] { 2, 1, 3, 2, 1 }, 3, new int[] { 2, 1, 2, 1 })]
+            [TestCase(new int[] { 2, 1, 3, 2, 1 }, 1, new int[] { 2, 3, 2 })]
+            [TestCase(new int[] { }, 3, new int[] { })]
+            public void DeleteAllBuValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.DeleteAllByValue(value);
 
                 Assert.AreEqual(expected, actual);
             }
