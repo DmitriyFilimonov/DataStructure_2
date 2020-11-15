@@ -223,7 +223,6 @@ namespace DataStructure_2Lib.LL
             Node current = new Node();
             Node tmpPreviousFromCurrentForIndex1 = new Node();
             Node tmpPreviousFromCurrentForIndex2 = new Node();
-
             tmpPreviousFromCurrentForIndex1.Next = _root;//в первый итерации предудщий элемент - null
             tmpPreviousFromCurrentForIndex2.Next = _root;//в первый итерации предудщий элемент - null
             current = _root;
@@ -235,7 +234,6 @@ namespace DataStructure_2Lib.LL
                 indexFirst = indexSecond;
                 indexSecond = a;
             }
-
             while (current!=null)
             {
                 Node iterationChanger = current.Next;
@@ -244,8 +242,8 @@ namespace DataStructure_2Lib.LL
                 {
                     previousFromIndex1 = tmpPreviousFromCurrentForIndex1;
                     tmpIndex1 = current;
-                    
                 }
+
                 tmpPreviousFromCurrentForIndex1 = current;
 
                 if (iteration == indexSecond-1)
@@ -262,13 +260,13 @@ namespace DataStructure_2Lib.LL
                     {
                         previousFromIndex1.Next = tmpIndex2;
                     }
+
                     previousFromIndex2.Next = tmpIndex1;
                     tmpIndex2.Next = tmpIndex1.Next;
                     tmpIndex1.Next = tmpNextFromIndex2;
                 }
 
                 tmpPreviousFromCurrentForIndex2 = current;
-
                 iteration++;
                 current = iterationChanger;
             }
@@ -551,6 +549,118 @@ namespace DataStructure_2Lib.LL
             {
                 return;
             }
+        }
+
+        public void PutArrayToEnd(int[] argumentArray)
+        {
+            Node current = new Node();
+            
+
+            if (Length == 0)
+            {
+                _root = new Node(argumentArray[0]);
+                Length++;
+                current = _root;
+
+                for (int i=1; i<argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+            }
+            else
+            {
+                current = _root;
+                while(current.Next!=null)
+                {
+                    current = current.Next;
+                }
+                
+                for (int i=0; i<argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+            }
+        }
+
+        public void PutArrayToStart(int[] argumentArray)
+        {
+            if(Length==0)
+            {
+                _root = new Node(argumentArray[0]);
+                Length++;
+                Node current = _root;
+                for(int i=1; i<argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+            }
+            else
+            {
+                Node breakPoint = new Node();
+                breakPoint.Next = _root;
+                _root = new Node(argumentArray[0]);
+                Length++;
+                Node current = _root;
+                for (int i = 1; i < argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+                current.Next = breakPoint.Next;
+            }
+        }
+
+        public void PutArrayToIndex(int index, int[] argumentArray)
+        {
+            Node current;
+            Node breakPoint = new Node();
+            breakPoint.Next = _root;
+            current = _root;
+
+            if (index == 0)
+            {
+                _root = new Node(argumentArray[0]);
+                Length++;
+                current = _root;
+                for (int i = 1; i < argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+                
+                current.Next = breakPoint.Next;
+            }
+            else
+            {
+                for (int i = 1; i < index; i++)
+                {
+                    current = current.Next;
+                }
+
+                breakPoint.Next = current.Next;
+
+                for (int i = 0; i < argumentArray.Length; i++)
+                {
+                    current.Next = new Node(argumentArray[i]);
+                    Length++;
+                    current = current.Next;
+                }
+
+                current.Next = breakPoint.Next;
+            }
+        }
+
+        public void DeleteFromEnd(int number)
+        {
+
         }
 
         public override bool Equals(object obj)

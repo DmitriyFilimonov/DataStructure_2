@@ -330,6 +330,66 @@ namespace LLTests
 
                 Assert.AreEqual(expected, actual);
             }
+
+            [TestCase(new int[] { }, new int[] { 4 }, new int[] { 4 })]
+            [TestCase(new int[] { }, new int[] { 4, 5 }, new int[] { 4, 5 })]
+            [TestCase(new int[] { 4}, new int[] { 4}, new int[] { 4, 4})]
+            [TestCase(new int[] { 4 }, new int[] { 4, 7 }, new int[] { 4, 4, 7 })]
+            [TestCase(new int[] { 1, 2 }, new int[] { 3, 4 }, new int[] { 1, 2, 3, 4 })]
+            public void PutArrayToEnd(int[] arrayForActual, int[] argumentArray, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.PutArrayToEnd(argumentArray);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { }, new int[] { 4 }, new int[] { 4 })]
+            [TestCase(new int[] { }, new int[] { 4, 5 }, new int[] { 4, 5 })]
+            [TestCase(new int[] { 4 }, new int[] { 4 }, new int[] { 4, 4 })]
+            [TestCase(new int[] { 4 }, new int[] { 4, 7 }, new int[] { 4, 7, 4 })]
+            [TestCase(new int[] { 1, 2 }, new int[] { 3, 4 }, new int[] { 3, 4, 1, 2 })]
+            public void PutArrayToStart(int[] arrayForActual, int[] argumentArray, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.PutArrayToStart(argumentArray);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { }, 0, new int[] { 4 }, new int[] { 4 })]
+            [TestCase(new int[] { }, 0, new int[] { 4, 5 }, new int[] { 4, 5 })]
+            [TestCase(new int[] { 4 }, 1, new int[] { 4 }, new int[] { 4, 4 })]
+            [TestCase(new int[] { 4 }, 0, new int[] { 4 }, new int[] { 4, 4 })]
+            [TestCase(new int[] { 4 }, 1, new int[] { 4, 7 }, new int[] { 4, 4, 7 })]
+            [TestCase(new int[] { 4 }, 0, new int[] { 4, 7 }, new int[] { 4, 7, 4 })]
+            [TestCase(new int[] { 1, 2 }, 2, new int[] { 3, 4 }, new int[] { 1, 2, 3, 4 })]
+            [TestCase(new int[] { 1, 2 }, 1, new int[] { 3, 4 }, new int[] { 1, 3, 4, 2 })]
+            [TestCase(new int[] { 1, 2 }, 0, new int[] { 3, 4 }, new int[] { 3, 4, 1, 2 })]
+            public void PutArrayToIndexTest(int[] arrayForActual,int index, int[] argumentArray, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.PutArrayToIndex(index, argumentArray);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 2, new int[] { 0, 3, 6, 1 })]
+            public void DeleteFromEndTest(int[] arrayForActual, int number, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.DeleteFromEnd(number);
+
+                Assert.AreEqual(expected, actual);
+            }
         }
     }
 }
