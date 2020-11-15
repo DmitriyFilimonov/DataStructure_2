@@ -269,12 +269,35 @@ namespace LLTests
 
             [TestCase(new int[] {3, 2, 4}, new int[] { 2, 3, 4})]
             [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 1, 3, 4, 5 })]
-            public void SortAscendText(int[] arrayForActual, int[] expectedArray)
+            [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 1, 3, 4, 5 })]
+            [TestCase(new int[] { 4, 1, 2, 5, 4 }, new int[] { 1, 2, 4, 4, 5 })]
+            [TestCase(new int[] { }, new int[] { })]
+            [TestCase(new int[] { 1}, new int[] { 1})]
+            [TestCase(new int[] { 2, 1 }, new int[] { 1, 2 })]
+            [TestCase(new int[] { 1, 2, 8, 7, 6, 0 }, new int[] { 0, 1, 2, 6, 7, 8 })]
+            public void SortAscendTest(int[] arrayForActual, int[] expectedArray)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
                 LinkedList expected = new LinkedList(expectedArray);
 
                 actual.SortAscend();
+
+                Assert.AreEqual(expected, actual);
+            }
+            [TestCase(new int[] { 3, 2, 4 }, new int[] { 4, 3, 2 })]
+            [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 5, 4, 3, 1 })]
+            [TestCase(new int[] { 4, 1, 2, 5, 4 }, new int[] { 5, 4, 4, 2, 1 })]
+            [TestCase(new int[] { }, new int[] { })]
+            [TestCase(new int[] { 1 }, new int[] { 1 })]
+            [TestCase(new int[] { 2, 1 }, new int[] { 2, 1 })]
+            [TestCase(new int[] { 1, 2 }, new int[] { 2, 1 })]
+            [TestCase(new int[] { 1, 2, 8, 7, 6, 0 }, new int[] { 8, 7, 6, 2, 1, 0 })]
+            public void SortDescendTest(int[] arrayForActual, int[] expectedArray)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(expectedArray);
+
+                actual.SortDescend();
 
                 Assert.AreEqual(expected, actual);
             }

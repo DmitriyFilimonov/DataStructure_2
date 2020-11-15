@@ -395,49 +395,99 @@ namespace DataStructure_2Lib.LL
 
         public void SortAscend()
         {
-            Node tmpLinkToShiftingElement;
             Node shiftingElement;
             Node nextAfterShifting;
 
-            Node current = _root;
-
-            while(current.Next!=null)
+            for(int i=0; i<Length-1; i++)
             {
-                Node runner = current.Next;
+                Node current = _root;
 
-
-
-                if (_root.Value > _root.Next.Value)
+                while (current.Next != null)
                 {
-
-                    shiftingElement = _root;//3
-                    nextAfterShifting = _root.Next;//2
-                    _root = _root.Next;//{2, 4}
-                    shiftingElement.Next = nextAfterShifting.Next;//{2, 4} {.., 3 , 4}
-                    _root.Next = shiftingElement;//{2, 3, 4}
-                   // runner = current.Next;
-                }
-
-                else
-                {
-                    if (current.Value > current.Next.Value)
+                    if (_root.Value > _root.Next.Value)
                     {
-                        shiftingElement = current;//4
-                        shiftingElement.Next = shiftingElement.Next.Next;//В ЭТОЙ СТРОЧКЕ МЕНЯЕТСЯ CURRENT.
-                        
-                        nextAfterShifting = current.Next;//3
-                        current = nextAfterShifting;//1,3,5
-                        
-                        current.Next = shiftingElement;//1,3,4,5
-                    }
-                }
 
-                //Node pre = current;
-                current = runner;
-                
-                //current = current.Next;
+                        //shiftingElement = _root;//3, 2, 4
+                        //nextAfterShifting = _root.Next;//2, 4
+
+                        //shiftingElement.Next = nextAfterShifting.Next;//shiftingElement == 3,4
+                        ////строка 410 изменяет _root. Почему в строке 417 не меняются shiftElemnt и nextAfterShifting?
+                        //_root = _root.Next;//{2, 4} shiftingElement == 2,4
+                        //_root.Next = shiftingElement;//{2, 3, 4}
+
+                        shiftingElement = _root;//3, 2, 4
+                        nextAfterShifting = _root.Next;//2, 4
+                        _root = _root.Next;//{2, 4} shiftingElement == 2,4
+                        shiftingElement.Next = nextAfterShifting.Next;//shiftingElement == 3,4
+                        _root.Next = shiftingElement;//{2, 3, 4}
+                        current = _root;
+
+                    }
+
+                    if (current.Next.Next != null)
+                    {
+                        if (current.Next.Value > current.Next.Next.Value)
+
+                        {
+                            shiftingElement = current.Next;
+                            nextAfterShifting = current.Next.Next;
+                            current.Next = current.Next.Next;
+                            shiftingElement.Next = nextAfterShifting.Next;
+                            current.Next.Next = shiftingElement;
+                        }
+                    }
+
+                    current = current.Next;
+                }
             }
-            
+        }
+
+        public void SortDescend()
+        {
+            Node shiftingElement;
+            Node nextAfterShifting;
+
+            for (int i = 0; i < Length - 1; i++)
+            {
+                Node current = _root;
+
+                while (current.Next != null)
+                {
+                    if (_root.Value < _root.Next.Value)
+                    {
+
+                        //shiftingElement = _root;//3, 2, 4
+                        //nextAfterShifting = _root.Next;//2, 4
+
+                        //shiftingElement.Next = nextAfterShifting.Next;//shiftingElement == 3,4
+                        ////строка 410 изменяет _root. Почему в строке 417 не меняются shiftElemnt и nextAfterShifting?
+                        //_root = _root.Next;//{2, 4} shiftingElement == 2,4
+                        //_root.Next = shiftingElement;//{2, 3, 4}
+
+                        shiftingElement = _root;//3, 2, 4
+                        nextAfterShifting = _root.Next;//2, 4
+                        _root = _root.Next;//{2, 4} shiftingElement == 2,4
+                        shiftingElement.Next = nextAfterShifting.Next;//shiftingElement == 3,4
+                        _root.Next = shiftingElement;//{2, 3, 4}
+                        current = _root;
+
+                    }
+
+                    if (current.Next.Next != null)
+                    {
+                        if (current.Next.Value < current.Next.Next.Value)
+
+                        {
+                            shiftingElement = current.Next;
+                            nextAfterShifting = current.Next.Next;
+                            current.Next = current.Next.Next;
+                            shiftingElement.Next = nextAfterShifting.Next;
+                            current.Next.Next = shiftingElement;
+                        }
+                    }
+                    current = current.Next;
+                }
+            }
         }
 
         public override bool Equals(object obj)
