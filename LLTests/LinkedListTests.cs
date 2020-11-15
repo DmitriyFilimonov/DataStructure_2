@@ -268,6 +268,7 @@ namespace LLTests
             }
 
             [TestCase(new int[] {3, 2, 4}, new int[] { 2, 3, 4})]
+            [TestCase(new int[] { 4, 1, 3, 5 }, new int[] { 1, 3, 4, 5 })]
             public void SortAscendText(int[] arrayForActual, int[] expectedArray)
             {
                 LinkedList actual = new LinkedList(arrayForActual);

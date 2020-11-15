@@ -9,3 +9,16 @@ C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2\obj\Debug\n
 C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.AssemblyInfo.cs
 C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.dll
 C:\Users\Дмитрий\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.pdb
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.exe
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.deps.json
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.runtimeconfig.json
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.runtimeconfig.dev.json
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.dll
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\bin\Debug\netcoreapp3.1\DataStructure_2.pdb
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.csprojAssemblyReference.cache
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.AssemblyInfoInputs.cache
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.AssemblyInfo.cs
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.csproj.CoreCompileInputs.cache
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.dll
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.pdb
+C:\Users\Kate\source\repos\DataStructure_2\DataStructure_2\obj\Debug\netcoreapp3.1\DataStructure_2.genruntimeconfig.cache

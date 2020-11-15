@@ -395,19 +395,49 @@ namespace DataStructure_2Lib.LL
 
         public void SortAscend()
         {
-            Node tmpLinkToShiftingElemnt;
-            Node shiftingElemnt;
+            Node tmpLinkToShiftingElement;
+            Node shiftingElement;
             Node nextAfterShifting;
 
-            if (_root.Value>_root.Next.Value)
-            {
-                shiftingElemnt = _root;
-                nextAfterShifting = _root.Next;
-                tmpLinkToShiftingElemnt = _root.Next;
-                _root = _root.Next;
-                _root.Next = nextAfterShifting;
+            Node current = _root;
 
+            while(current.Next!=null)
+            {
+                Node runner = current.Next;
+
+
+
+                if (_root.Value > _root.Next.Value)
+                {
+
+                    shiftingElement = _root;//3
+                    nextAfterShifting = _root.Next;//2
+                    _root = _root.Next;//{2, 4}
+                    shiftingElement.Next = nextAfterShifting.Next;//{2, 4} {.., 3 , 4}
+                    _root.Next = shiftingElement;//{2, 3, 4}
+                   // runner = current.Next;
+                }
+
+                else
+                {
+                    if (current.Value > current.Next.Value)
+                    {
+                        shiftingElement = current;//4
+                        shiftingElement.Next = shiftingElement.Next.Next;//В ЭТОЙ СТРОЧКЕ МЕНЯЕТСЯ CURRENT.
+                        
+                        nextAfterShifting = current.Next;//3
+                        current = nextAfterShifting;//1,3,5
+                        
+                        current.Next = shiftingElement;//1,3,4,5
+                    }
+                }
+
+                //Node pre = current;
+                current = runner;
+                
+                //current = current.Next;
             }
+            
         }
 
         public override bool Equals(object obj)
