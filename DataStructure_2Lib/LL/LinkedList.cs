@@ -660,7 +660,37 @@ namespace DataStructure_2Lib.LL
 
         public void DeleteFromEnd(int number)
         {
-
+            if ((number <= Length) && (number > 0))
+            {
+                if (number == Length)
+                {
+                    _root = null;
+                    Length = 0;
+                }
+                else if (Length - number == 1)
+                {
+                    _root.Next = null;
+                    Length = 1;
+                }
+                else
+                {
+                    Node current = _root;
+                    for (int i = 1; i < Length - number; i++)
+                    {
+                        current = current.Next;
+                    }
+                    current.Next = null;
+                    Length -= number;
+                }
+            }
+            else if(number==0)
+            {
+                return;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
         }
 
         public override bool Equals(object obj)

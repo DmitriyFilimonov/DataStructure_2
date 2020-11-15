@@ -381,6 +381,11 @@ namespace LLTests
             }
 
             [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 2, new int[] { 0, 3, 6, 1 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 6, new int[] {  })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 5, new int[] { 0 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, new int[] { 0, 3, 6, 1 , 7, 3})]
+            [TestCase(new int[] { 0, 3}, 1, new int[] { 0 })]
+            [TestCase(new int[] { 0, 3 }, 2, new int[] {})]
             public void DeleteFromEndTest(int[] arrayForActual, int number, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
