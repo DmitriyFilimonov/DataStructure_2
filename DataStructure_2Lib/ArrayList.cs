@@ -21,19 +21,6 @@ namespace DataStructure_2Lib
             Length = 0;
         }
 
-        public ArrayList(int listLength)//конструктор пустого списка из N элементов
-        {
-            if (listLength < 0)
-            {
-                throw new OverflowException();
-            }
-            else
-            {
-                _array = new int[listLength];
-                Length = listLength;
-            }
-        }
-
         public ArrayList(int[] list)//конструктор заполняющий список N элементами
         {
             if (list.Length > 0)
@@ -81,7 +68,7 @@ namespace DataStructure_2Lib
             int newLength = Length;
             while (newLength <= Length + number)
             {
-                newLength = (int)(newLength * 4 / 3 + 1);
+                newLength = (int)(newLength * 4 / 3 + 1);//разобраться с приведениями
             }
             int[] newArray = new int[newLength];
             Array.Copy(_array, newArray, _ArrayLength);
@@ -94,7 +81,7 @@ namespace DataStructure_2Lib
             int newLength = Length;
             while (newLength >= Length - number)
             {
-                newLength = (int)((newLength * 2 + 1) / 3);
+                newLength = (int)((newLength * 2 + 1) / 3);//разобраться с приведениями
             }
 
             int[] newArray = new int[newLength];

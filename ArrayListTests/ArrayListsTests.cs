@@ -13,25 +13,9 @@ namespace ArrayListTests
             Assert.AreEqual(0, myList.Length);
         }
 
-        [TestCase(0)]
-        [TestCase(1)]
-        public void ConstructListOfNumberEmptyItemsTest(int numberOfItems)
-        {
-            ArrayList myList = new ArrayList(numberOfItems);
+        
 
-            int expected = numberOfItems;
-            int actual = myList.Length;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestCase(-1)]
-        public void ConstructListOfNumberEmptyItemsTestNegative(int numberOfItems)
-        {
-            ArrayList myList;
-
-            Assert.Throws<OverflowException>(() => myList = new ArrayList(numberOfItems));
-        }
+        
 
         [TestCase(new int[] { })]
         [TestCase(new int[] { 0 })]
