@@ -188,6 +188,8 @@ namespace LLTests
             }
 
             [TestCase(new int[] { 1, 2, 3, 4 }, new int[] { 4, 3, 2, 1 })]
+            [TestCase(new int[] { 1, 2}, new int[] { 2, 1 })]
+            [TestCase(new int[] { 1 }, new int[] { 1 })]
             public void ReverseTest(int[] arrayForActual, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
