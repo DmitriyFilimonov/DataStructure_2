@@ -711,7 +711,7 @@ namespace DataStructure_2Lib.LL
             //}
 
             Node tmp1 = _root;
-            Node tmp2 = linkedList._root;
+            Node tmp2 = linkedList._root;//в дабл добавить _tail и шагать previous-ами
             for (int i = 0; i < Length; i++)
             {
                 if (tmp1.Value != tmp2.Value)
