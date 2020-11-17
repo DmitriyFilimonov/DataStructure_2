@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure_2", "DataStructure_2\DataStructure_2.csproj", "{03D10A10-75B8-4852-AB98-DD3096E7FA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure_2", "DataStructure_2\DataStructure_2.csproj", "{03D10A10-75B8-4852-AB98-DD3096E7FA57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure_2Lib", "DataStructure_2Lib\DataStructure_2Lib.csproj", "{CFC496CD-8C96-4041-B8B1-783694D04262}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure_2Lib", "DataStructure_2Lib\DataStructure_2Lib.csproj", "{CFC496CD-8C96-4041-B8B1-783694D04262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLTests", "LLTests\LLTests.csproj", "{60C74750-8C53-4865-8E16-651F132B6211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLTests", "LLTests\LLTests.csproj", "{60C74750-8C53-4865-8E16-651F132B6211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrLTests", "ArrayListTests\ArrLTests.csproj", "{89BA1517-602B-451C-A158-CD09EB8C885B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrLTests", "ArrayListTests\ArrLTests.csproj", "{89BA1517-602B-451C-A158-CD09EB8C885B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleLLTests", "DoubleLLTests\DoubleLLTests.csproj", "{B3155976-300E-4332-AA63-637A2CEF4750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{89BA1517-602B-451C-A158-CD09EB8C885B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89BA1517-602B-451C-A158-CD09EB8C885B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89BA1517-602B-451C-A158-CD09EB8C885B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3155976-300E-4332-AA63-637A2CEF4750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3155976-300E-4332-AA63-637A2CEF4750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3155976-300E-4332-AA63-637A2CEF4750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3155976-300E-4332-AA63-637A2CEF4750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

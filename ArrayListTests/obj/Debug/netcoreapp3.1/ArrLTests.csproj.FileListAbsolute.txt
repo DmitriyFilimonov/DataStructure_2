@@ -192,3 +192,5 @@ C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\obj\Debug\netcoreapp3.
 C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\obj\Debug\netcoreapp3.1\ArrLTests.dll
 C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\obj\Debug\netcoreapp3.1\ArrLTests.pdb
 C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\obj\Debug\netcoreapp3.1\ArrLTests.genruntimeconfig.cache
+C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\Kate\source\repos\DataStructure_2\ArrayListTests\bin\Debug\netcoreapp3.1\nunit.engine.core.dll
