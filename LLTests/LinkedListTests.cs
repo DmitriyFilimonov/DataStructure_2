@@ -388,12 +388,51 @@ namespace LLTests
             [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, new int[] { 0, 3, 6, 1 , 7, 3})]
             [TestCase(new int[] { 0, 3}, 1, new int[] { 0 })]
             [TestCase(new int[] { 0, 3 }, 2, new int[] {})]
+            [TestCase(new int[] { 1 }, 1, new int[] { })]
             public void DeleteFromEndTest(int[] arrayForActual, int number, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
                 LinkedList expected = new LinkedList(arrayForExpected);
 
                 actual.DeleteFromEnd(number);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 2, new int[] { 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 6, new int[] { })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 5, new int[] { 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, new int[] { 0, 3, 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3 }, 1, new int[] { 3 })]
+            [TestCase(new int[] { 0, 3 }, 2, new int[] { })]
+            [TestCase(new int[] { 1 }, 1, new int[] { })]
+            public void DeleteFromStartTest(int[] arrayForActual, int number, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.DeleteFromStart(number);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 2, 1, new int[] { 0, 3, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 5, 1, new int[] { 0, 3, 6, 1, 7 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 4, 2, new int[] { 0, 3, 6, 1 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, 0, new int[] { 0, 3, 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 1, 0, new int[] { 0, 3, 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 5, 0, new int[] { 0, 3, 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, 1, new int[] { 3, 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, 2, new int[] { 6, 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3, 6, 1, 7, 3 }, 0, 3, new int[] { 1, 7, 3 })]
+            [TestCase(new int[] { 0, 3 }, 1, 1, new int[] { 0 })]
+            [TestCase(new int[] { 0, 3 }, 2, new int[] { })]
+            public void DeleteFromIndexTest(int[] arrayForActual, int index, int number, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.DeleteFromIndex(index, number);
 
                 Assert.AreEqual(expected, actual);
             }

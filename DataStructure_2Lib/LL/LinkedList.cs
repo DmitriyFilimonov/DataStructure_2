@@ -200,8 +200,7 @@ namespace DataStructure_2Lib.LL
             Node current = _root;
             Node next;
             Node pre = null;
-            //pre.Next = _root;//в строке нет необходимости, но с ней работает 
-            //строка 203 - для наглядности того, что список ограничен null-ами
+            
             while(current!=null)
             {
                 next = current.Next;
@@ -691,6 +690,52 @@ namespace DataStructure_2Lib.LL
             {
                 throw new IndexOutOfRangeException();
             }
+        }
+
+        public void DeleteFromStart(int number)
+        {
+            if ((number <= Length) && (number > 0))
+            {
+                if (number == Length)
+                {
+                    _root = null;
+                    Length = 0;
+                }
+                else if (Length - number == 1)
+                {
+                    Node current = _root;
+
+                    while(current.Next!=null)
+                    {
+                        current = current.Next;
+                    }
+                    _root = current;
+                    Length = 1;
+                }
+                else
+                {
+                    Node current = _root.Next;
+                    for (int i = 1; i < number; i++)
+                    {
+                        current = current.Next;
+                    }
+                    _root = current;
+                    Length -= number;
+                }
+            }
+            else if (number == 0)
+            {
+                return;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
+
+        public void DeleteFromIndex(int index, int number)
+        {
+
         }
 
         public override bool Equals(object obj)

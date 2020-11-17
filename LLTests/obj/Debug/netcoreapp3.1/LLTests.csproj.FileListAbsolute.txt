@@ -192,3 +192,5 @@ C:\Users\Kate\source\repos\DataStructure_2\LLTests\obj\Debug\netcoreapp3.1\LLTes
 C:\Users\Kate\source\repos\DataStructure_2\LLTests\obj\Debug\netcoreapp3.1\LLTests.dll
 C:\Users\Kate\source\repos\DataStructure_2\LLTests\obj\Debug\netcoreapp3.1\LLTests.pdb
 C:\Users\Kate\source\repos\DataStructure_2\LLTests\obj\Debug\netcoreapp3.1\LLTests.genruntimeconfig.cache
+C:\Users\Kate\source\repos\DataStructure_2\LLTests\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\Kate\source\repos\DataStructure_2\LLTests\bin\Debug\netcoreapp3.1\nunit.engine.core.dll
