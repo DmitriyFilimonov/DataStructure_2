@@ -13,9 +13,9 @@ namespace ArrayListTests
             Assert.AreEqual(0, myList.Length);
         }
 
-        
 
-        
+
+
 
         [TestCase(new int[] { })]
         [TestCase(new int[] { 0 })]
@@ -114,8 +114,8 @@ namespace ArrayListTests
             ArrayList actual = new ArrayList(inputList);
             ArrayList expected = new ArrayList(expectedList);
 
-            actual.PutLast(5);
-            actual.DeleteLast();
+            //actual.PutLast(5);
+            //actual.DeleteLast();
             actual.DeleteLast();
 
             Assert.AreEqual(expected, actual);
@@ -126,7 +126,109 @@ namespace ArrayListTests
         {
             ArrayList myList = new ArrayList(inputList);
 
-            Assert.Throws<IndexOutOfRangeException>(() => myList.DeleteLast());
+            Assert.Throws<NullReferenceException>(() => myList.DeleteLast());
+        }
+
+        [TestCase(new int[] { 1, 2, 4, 5 }, new int[] { 2, 4, 5 })]
+        [TestCase(new int[] { 5 }, new int[] { })]
+        public void DeleteFirstTest(int[] arrayForActual, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.DeleteFirst();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 1, 2, 4, 5 }, 0, new int[] { 2, 4, 5 })]
+        [TestCase(new int[] { 1, 2, 4, 5 }, 1, new int[] { 1, 4, 5 })]
+        [TestCase(new int[] { 1, 2, 4, 5 }, 3, new int[] { 1, 2, 4 })]
+        [TestCase(new int[] { 5 }, 0, new int[] { })]
+        [TestCase(new int[] { 5, 2 }, 0, new int[] { 2 })]
+        [TestCase(new int[] { 5, 2 }, 1, new int[] { 5 })]
+        public void DeleteByIndexTest(int[] arrayForActual, int index, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.DeleteByIndex(index);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 1, 2, 4, 5 }, 4)]
+        [TestCase(new int[] { }, 0)]
+        [TestCase(new int[] { 5 }, 1)]
+        [TestCase(new int[] { 5, 2 }, 2)]
+        public void LengthGetterTest(int[] array, int expected)
+        {
+            ArrayList actual = new ArrayList(array);
+
+            Assert.AreEqual(expected, actual.Length);
+        }
+
+        [TestCase(new int[] {1, 2, 5, 8}, new int[] {8, 5, 2, 1})]
+        [TestCase(new int[] { 1, 2, 5, 8, 0 }, new int[] { 0, 8, 5, 2, 1 })]
+        [TestCase(new int[] { 1, 2 }, new int[] { 2, 1 })]
+        [TestCase(new int[] { 1}, new int[] { 1 })]
+        [TestCase(new int[] { 0 }, new int[] { 0 })]
+        public void ReverseTest(int[] arrayForActual, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.Reverse();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 1, 2, 5, 8 }, 8)]
+        [TestCase(new int[] { 1, 2, 5, -1, 0 }, 5)]
+        [TestCase(new int[] { 1, 2 }, 2)]
+        [TestCase(new int[] { 1 }, 1)]
+        [TestCase(new int[] { 0 }, 0)]
+        public void GetMaxElementValueTest(int[] arrayForActual, int expected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            
+            Assert.AreEqual(expected, actual.GetMaxElementValue());
+        }
+
+        [TestCase(new int[] { 1, 2, 5, 8 }, 1)]
+        [TestCase(new int[] { 1, 2, 5, -1, 0 }, -1)]
+        [TestCase(new int[] { 1, 2 }, 1)]
+        [TestCase(new int[] { 1 }, 1)]
+        [TestCase(new int[] { 0 }, 0)]
+        public void GetMinElementValueTest(int[] arrayForActual, int expected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+
+            Assert.AreEqual(expected, actual.GetMinElementValue());
+        }
+
+        [TestCase(new int[] { 1, 2, 5, 8 }, 3)]
+        [TestCase(new int[] { 1, 2, 5, -1, 0 }, 2)]
+        [TestCase(new int[] { 1, 2 }, 1)]
+        [TestCase(new int[] { 1 }, 0)]
+        [TestCase(new int[] { 0 }, 0)]
+        public void GetIndexOfMaxElement(int[] arrayForActual, int expected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+
+            Assert.AreEqual(expected, actual.GetIndexOfMaxElement());
+        }
+
+        [TestCase(new int[] { 1, 2, 5, 8 }, 0)]
+        [TestCase(new int[] { 1, 2, 5, -1, 0 }, 3)]
+        [TestCase(new int[] { 1, 2 }, 0)]
+        [TestCase(new int[] { 1 }, 0)]
+        [TestCase(new int[] { 0 }, 0)]
+        public void GetIndexOfMinElement(int[] arrayForActual, int expected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+
+            Assert.AreEqual(expected, actual.GetIndexOfMinElement());
         }
     }
 }

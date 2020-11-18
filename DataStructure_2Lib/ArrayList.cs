@@ -63,12 +63,12 @@ namespace DataStructure_2Lib
             }
         }
 
-        private void IncreaseLenght(int number = 1)
+        private void IncreaseLength(int number = 1)
         {
             int newLength = Length;
             while (newLength <= Length + number)
             {
-                newLength = (int)(newLength * 4 / 3 + 1);//разобраться с приведениями
+                newLength = (int)(newLength * 1.33 + 1);//разобраться с приведениями
             }
             int[] newArray = new int[newLength];
             Array.Copy(_array, newArray, _ArrayLength);
@@ -79,9 +79,9 @@ namespace DataStructure_2Lib
         private void DecreaseLength(int number = 1)
         {
             int newLength = Length;
-            while (newLength >= Length - number)
+            while (newLength >= 2 * Length + number)
             {
-                newLength = (int)((newLength * 2 + 1) / 3);//разобраться с приведениями
+                newLength = (int)(newLength * 0.66 + 1);//разобраться с приведениями
             }
 
             int[] newArray = new int[newLength];
@@ -94,7 +94,7 @@ namespace DataStructure_2Lib
         {
             if (_ArrayLength <= Length)
             {
-                IncreaseLenght();
+                IncreaseLength();
             }
             _array[Length] = value;
             Length++;
@@ -104,7 +104,7 @@ namespace DataStructure_2Lib
         {
             if (_ArrayLength <= Length)
             {
-                IncreaseLenght(1);
+                IncreaseLength();
             }
             for (int i = Length + 1; i > 0; i--)
             {
@@ -116,12 +116,118 @@ namespace DataStructure_2Lib
 
         public void DeleteLast()
         {
-
-            if (Length <= _ArrayLength / 2)
+            if (Length != 0)
             {
                 DecreaseLength();
+                Length--;
             }
-            Length--;
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+        public void DeleteFirst()
+        {
+            if (Length != 0)
+            {
+                DecreaseLength();
+                Length--;
+                for (int i =0; i < Length; i++)
+                {
+                    _array[i] = _array[i + 1];
+                }
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+        public void DeleteByIndex(int index)
+        {
+            if (Length != 0)
+            {
+                DecreaseLength();
+                Length--;
+                for (int i = index; i < Length; i++)
+                {
+                    _array[i] = _array[i + 1];
+                }
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+        public void Reverse()
+        {
+            int tmp;
+            for (int i=0; i<Length / 2; i++)
+            {
+                tmp = _array[i];
+                _array[i] = _array[Length - 1 - i];
+                _array[Length - 1 - i] = tmp;
+            }
+        }
+
+        public int GetMaxElementValue()
+        {
+            int max = _array[0];
+            for (int i = 1; i < Length; i++)
+            {
+                if (max < _array[i])
+                {
+                    max = _array[i];
+                }
+            }
+            return max;
+        }
+
+        public int GetMinElementValue()
+        {
+            int min = _array[0];
+            for (int i = 1; i < Length; i++)
+            {
+                if (min > _array[i])
+                {
+                    min = _array[i];
+                }
+            }
+            return min;
+        }
+
+        public int GetIndexOfMaxElement()
+        {
+            int max = _array[0];
+            int index = 0;
+
+            for (int i = 1; i < Length; i++)
+            {
+                if (max < _array[i])
+                {
+                    max = _array[i];
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        public int GetIndexOfMinElement()
+        {
+            int min = _array[0];
+            int index = 0;
+
+            for (int i = 1; i < Length; i++)
+            {
+                if (min > _array[i])
+                {
+                    min = _array[i];
+                    index = i;
+                }
+            }
+            return index;
         }
 
         public override bool Equals(object obj)//для тестов, переделка системного метода
@@ -144,6 +250,21 @@ namespace DataStructure_2Lib
             }
 
             return true;
+        }
+
+        public override string ToString()
+        {
+            string s = "";
+
+            if (Length != 0)
+            {
+                for (int i=0; i<Length; i++)
+                {
+                    s += _array[i] + ";";
+                    
+                }
+            }
+            return s;
         }
     }
 }
