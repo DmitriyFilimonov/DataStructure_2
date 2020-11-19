@@ -23,8 +23,9 @@ namespace DataStructure_2Lib.DoubleLL
             Value = value;
             Next = null;
             Pre = null;
-            
+
         }
+
 
         public DoubleNode(DoubleNode doubleNode)
         {
@@ -32,6 +33,11 @@ namespace DataStructure_2Lib.DoubleLL
             Pre = doubleNode.Pre;
 
             Value = doubleNode.Value;
+        }
+
+        public override string ToString()
+        {
+            return $"{Value}";
         }
     }
 }

@@ -14,6 +14,9 @@ namespace DoubleLLTests
 
         [TestCase(new int[] { 1, 0, 8, -5, 5 }, 2, 8)]
         [TestCase(new int[] { 1, 0, 8, -5, 5 }, 3, -5)]
+        [TestCase(new int[] { 1, 0, 8, -5, 5 }, 4, 5)]
+        [TestCase(new int[] { 1, 0, 8, -5, 5 }, 0, 1)]
+        [TestCase(new int[] { 1, 0, 8, -5, 5 }, 1, 0)]
         public void GetterTest(int[] inputArr, int index, int expected)
         {
             DoubleLinkedList actualList = new DoubleLinkedList(inputArr);

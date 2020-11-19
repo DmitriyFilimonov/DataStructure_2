@@ -284,6 +284,8 @@ namespace ArrayListTests
         [TestCase(new int[] { 2, 2, 3, 3, 8 }, 3, new int[] { 2, 2, 8 })]
         [TestCase(new int[] { 2, 8 }, 2, new int[] { 8 })]
         [TestCase(new int[] { 2 }, 2, new int[] { })]
+        [TestCase(new int[] { 2, 2, 2, 2, 2 , 2, 8, 16, 2 }, 2, new int[] { 8, 16 })]
+        [TestCase(new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 16, 2 }, 2, new int[] { 8, 16 })]
         public void DeleteEveryByValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
         {
             ArrayList actual = new ArrayList(arrayForActual);

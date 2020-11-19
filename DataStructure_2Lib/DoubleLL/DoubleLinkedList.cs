@@ -17,13 +17,13 @@ namespace DataStructure_2Lib.DoubleLL
             {
                 _root = new DoubleNode(array[0]);
                 DoubleNode current = _root;
-                DoubleNode pre = null;
+                //DoubleNode pre = null;
 
                 for (int i = 1; i < array.Length; i++)
                 {
-                    current.Pre = pre;
+                    
                     current.Next = new DoubleNode(array[i]);
-                    pre = current;
+                    current.Next.Pre = current;
                     current = current.Next;
                 }
 
@@ -58,7 +58,7 @@ namespace DataStructure_2Lib.DoubleLL
                     if (index < worstCase)
                     {
                         DoubleNode tmp = _root;
-                        for (int i = 1; i < worstCase; i++)
+                        for (int i = 1; i <= index; i++)
                         {
                             tmp = tmp.Next;
                             
@@ -68,7 +68,7 @@ namespace DataStructure_2Lib.DoubleLL
                     else
                     {
                         DoubleNode tmp = _tail;
-                        for (int i = Length-1; i > worstCase; i--)
+                        for (int i = Length; i > index+1; i--)
                         {
                             tmp = tmp.Pre;
                             
