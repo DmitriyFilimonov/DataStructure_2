@@ -230,6 +230,95 @@ namespace DataStructure_2Lib
             return index;
         }
 
+        public void SortAscend()
+        {
+            int buffer = 0;
+
+            for (int i = 1; i < Length; i++)
+            {
+                for (int j = 0; j < Length - i; j++)
+                {
+                    if (_array[j] > _array[j + 1])
+                    {
+                        buffer = _array[j + 1];
+                        _array[j + 1] = _array[j];
+                        _array[j] = buffer;
+                    }
+                }
+            }
+        }
+
+        public void SortDescend()
+        {
+            int buffer = 0;
+
+            for (int i = 0; i < Length - 1; i++)
+            {
+
+                for (int j = i + 1; j < Length; j++)
+                {
+                    if (_array[i] < _array[j])
+                    {
+                        buffer = _array[i];
+                        _array[i] = _array[j];
+                        _array[j] = buffer;
+                    }
+                }
+            }
+        }
+
+        public void DeleteByValue(int value)
+        {
+            int index=0;
+            int i;
+
+            if (Length != 0)
+            {
+                
+                while (_array[index] != value)
+                {
+                    index++;
+                    
+                }
+                for (i=index; i<Length-1; i++)
+                {
+                    _array[i] = _array[i + 1];
+                }
+                DecreaseLength();
+                Length--;
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+        public void DeleteEveryByValue(int value)
+        {
+            if (Length != 0)
+            {
+            for (int i = 0; i < Length; i++)
+            {
+                if (_array[i]==value)
+                {
+                    for (int j=i; j<Length-1; j++)
+                    {
+                        _array[j] = _array[j + 1];
+                    }
+                    DecreaseLength();
+                    Length--;
+                    i--;
+                }
+            }
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+
+
         public override bool Equals(object obj)//для тестов, переделка системного метода
         {
             ArrayList arrayList = (ArrayList)obj;
@@ -266,5 +355,6 @@ namespace DataStructure_2Lib
             }
             return s;
         }
+
     }
 }

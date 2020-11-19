@@ -9,15 +9,15 @@
       "ArrLTests/1.0.0": {
         "dependencies": {
           "DataStructure_2Lib": "1.0.0",
-          "Microsoft.NET.Test.Sdk": "16.8.0",
-          "NUnit3TestAdapter": "3.17.0",
+          "Microsoft.NET.Test.Sdk": "16.9.0-preview-20201020-06",
+          "NUnit3TestAdapter": "4.0.0-alpha.1",
           "NUnit": "3.12.0"
         },
         "runtime": {
           "ArrLTests.dll": {}
         }
       },
-      "Microsoft.CodeCoverage/16.8.0": {
+      "Microsoft.CodeCoverage/16.9.0-preview-20201020-06": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
             "assemblyVersion": "15.0.0.0",
@@ -63,15 +63,15 @@
           }
         }
       },
-      "Microsoft.NET.Test.Sdk/16.8.0": {
+      "Microsoft.NET.Test.Sdk/16.9.0-preview-20201020-06": {
         "dependencies": {
-          "Microsoft.CodeCoverage": "16.8.0",
-          "Microsoft.TestPlatform.TestHost": "16.8.0"
+          "Microsoft.CodeCoverage": "16.9.0-preview-20201020-06",
+          "Microsoft.TestPlatform.TestHost": "16.9.0-preview-20201020-06"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "Microsoft.TestPlatform.ObjectModel/16.8.0": {
+      "Microsoft.TestPlatform.ObjectModel/16.9.0-preview-20201020-06": {
         "dependencies": {
           "NuGet.Frameworks": "5.0.0"
         },
@@ -170,9 +170,9 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/16.8.0": {
+      "Microsoft.TestPlatform.TestHost/16.9.0-preview-20201020-06": {
         "dependencies": {
-          "Microsoft.TestPlatform.ObjectModel": "16.8.0",
+          "Microsoft.TestPlatform.ObjectModel": "16.9.0-preview-20201020-06",
           "Newtonsoft.Json": "9.0.1"
         },
         "runtime": {
@@ -392,7 +392,7 @@
           }
         }
       },
-      "NUnit3TestAdapter/3.17.0": {
+      "NUnit3TestAdapter/4.0.0-alpha.1": {
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0",
           "System.ComponentModel.EventBasedAsync": "4.3.0",
@@ -879,12 +879,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.CodeCoverage/16.8.0": {
+    "Microsoft.CodeCoverage/16.9.0-preview-20201020-06": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fR7HsWO+jTRhfBPWVl6QJbJSEU98siIKcQIDIo2tOH6nlogcOdScquWzVABR0UUpQlfWwt13vyryOltvLfsHnw==",
-      "path": "microsoft.codecoverage/16.8.0",
-      "hashPath": "microsoft.codecoverage.16.8.0.nupkg.sha512"
+      "sha512": "sha512-lnJqFuTR4X42ZEDklFLI3/yfggjY1wl+noWDxAX9i8CVLylf5zAnnbFZnYu+0y3B+sPHiUSSsSFix7seYlr8dA==",
+      "path": "microsoft.codecoverage/16.9.0-preview-20201020-06",
+      "hashPath": "microsoft.codecoverage.16.9.0-preview-20201020-06.nupkg.sha512"
     },
     "Microsoft.CSharp/4.0.1": {
       "type": "package",
@@ -900,12 +900,12 @@
       "path": "microsoft.dotnet.internalabstractions/1.0.0",
       "hashPath": "microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512"
     },
-    "Microsoft.NET.Test.Sdk/16.8.0": {
+    "Microsoft.NET.Test.Sdk/16.9.0-preview-20201020-06": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fc8VoTlD9+en13XWT9SW86M9jn4Y0Vns/uHRUJ2B6fevnuYmkilBLL+bIXC9yMELGYrerXIZm+B6Caux8lopfQ==",
-      "path": "microsoft.net.test.sdk/16.8.0",
-      "hashPath": "microsoft.net.test.sdk.16.8.0.nupkg.sha512"
+      "sha512": "sha512-jfENvSj9FUf5AYyz+mlbyhgWiUJFK2Aez42t8HhF6UNMcvkr3Dpfc5FeRCvqTmX/Hp7eyNwznoiyGuEYL9lYjg==",
+      "path": "microsoft.net.test.sdk/16.9.0-preview-20201020-06",
+      "hashPath": "microsoft.net.test.sdk.16.9.0-preview-20201020-06.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -921,19 +921,19 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "Microsoft.TestPlatform.ObjectModel/16.8.0": {
+    "Microsoft.TestPlatform.ObjectModel/16.9.0-preview-20201020-06": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y60IDgwinOqwECwmvXyFqk2lnQAvcS6EKevc3DyKUJoJaNJ9bUGsUS8H2nlgBHloSQ/Zqj27CjRuLhBsCUO58w==",
-      "path": "microsoft.testplatform.objectmodel/16.8.0",
-      "hashPath": "microsoft.testplatform.objectmodel.16.8.0.nupkg.sha512"
+      "sha512": "sha512-MKo+0CkSdmE7AdWFc/XPPRQpMckZz1KtwNHmItuFJwbfshZlkH21haK8mvf35ZzVtEHcFA7aUW0HEXKNWYK/9w==",
+      "path": "microsoft.testplatform.objectmodel/16.9.0-preview-20201020-06",
+      "hashPath": "microsoft.testplatform.objectmodel.16.9.0-preview-20201020-06.nupkg.sha512"
     },
-    "Microsoft.TestPlatform.TestHost/16.8.0": {
+    "Microsoft.TestPlatform.TestHost/16.9.0-preview-20201020-06": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CVXKGIWakPq7UboAlJ7ukcngBFF2UaHwS9pAN3nLyOpOR3yUYbinpd+eVvz6Fm/qRBP4uiwx0lWEZlHOHG1c0w==",
-      "path": "microsoft.testplatform.testhost/16.8.0",
-      "hashPath": "microsoft.testplatform.testhost.16.8.0.nupkg.sha512"
+      "sha512": "sha512-YYg9mKbXxDFYzJfExWOMFhr5gTPd10fy13XMrk6TjxS0FnaSOfNs8AJKGhvm96M1SwyApUV9p1e9oeq1FLnxqg==",
+      "path": "microsoft.testplatform.testhost/16.9.0-preview-20201020-06",
+      "hashPath": "microsoft.testplatform.testhost.16.9.0-preview-20201020-06.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
@@ -977,12 +977,12 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "NUnit3TestAdapter/3.17.0": {
+    "NUnit3TestAdapter/4.0.0-alpha.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I9MNvK+GM2yXrHPitwZkAZKU9sYI2OO/8wKC+VuBD7V3z+ySQ1pSopX/urr0ooedI8/TIcajYPRO4vGRr7AM8A==",
-      "path": "nunit3testadapter/3.17.0",
-      "hashPath": "nunit3testadapter.3.17.0.nupkg.sha512"
+      "sha512": "sha512-8/nJstVYMZHqIv6eMCY+00j7Wo4mKI1cSK9e1YhCAHiQSIXkQWAdyKBKdu4EZgGI6hx41a+Bk1+iRFjj7DkpDQ==",
+      "path": "nunit3testadapter/4.0.0-alpha.1",
+      "hashPath": "nunit3testadapter.4.0.0-alpha.1.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

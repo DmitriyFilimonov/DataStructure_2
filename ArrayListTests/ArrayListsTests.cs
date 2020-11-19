@@ -230,5 +230,68 @@ namespace ArrayListTests
 
             Assert.AreEqual(expected, actual.GetIndexOfMinElement());
         }
+
+        [TestCase(new int[] { 2, 4, 7, 8}, new int[] { 2, 4, 7, 8})]
+        [TestCase(new int[] { 2, 4, 8, 7 }, new int[] { 2, 4, 7, 8 })]
+        [TestCase(new int[] { 4, 2 }, new int[] { 2, 4})]
+        [TestCase(new int[] { 4, 4 }, new int[] { 4, 4 })]
+        [TestCase(new int[] { 40 }, new int[] { 40 })]
+        public void SortAscendTest(int[] arrayForActual, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.SortAscend();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 2, 4, 7, 8 }, new int[] { 8, 7, 4, 2 })]
+        [TestCase(new int[] { 2, 4, 8, 7 }, new int[] { 8, 7, 4, 2 })]
+        [TestCase(new int[] { 4, 2 }, new int[] { 4, 2 })]
+        [TestCase(new int[] { 2, 4 }, new int[] { 4, 2 })]
+        [TestCase(new int[] { 40 }, new int[] { 40 })]
+        public void SortDescendTest(int[] arrayForActual, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.SortDescend();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 2, 8, 16 }, 2, new int[] { 8, 16 })]
+        [TestCase(new int[] { 2, 8, 16 }, 8, new int[] { 2, 16 })]
+        [TestCase(new int[] { 2, 8, 16 }, 16, new int[] { 2, 8 })]
+        [TestCase(new int[] { 2, 8 }, 8, new int[] { 2 })]
+        [TestCase(new int[] { 2, 8 }, 2, new int[] { 8 })]
+        [TestCase(new int[] { 2}, 2, new int[] { })]
+        public void DeleteByValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.DeleteByValue(value);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(new int[] { 2, 8, 16, 2 }, 2, new int[] { 8, 16 })]
+        [TestCase(new int[] { 2, 8, 8, 16 }, 8, new int[] { 2, 16 })]
+        [TestCase(new int[] { 16, 2, 16, 8, 16 }, 16, new int[] { 2, 8 })]
+        [TestCase(new int[] { 2, 2, 3, 3, 8 }, 3, new int[] { 2, 2, 8 })]
+        [TestCase(new int[] { 2, 8 }, 2, new int[] { 8 })]
+        [TestCase(new int[] { 2 }, 2, new int[] { })]
+        public void DeleteEveryByValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
+        {
+            ArrayList actual = new ArrayList(arrayForActual);
+            ArrayList expected = new ArrayList(arrayForExpected);
+
+            actual.DeleteEveryByValue(value);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
