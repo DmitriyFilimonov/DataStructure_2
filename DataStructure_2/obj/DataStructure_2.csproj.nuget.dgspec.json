@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj": {}
+    "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj": {
+    "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
+        "projectUniqueName": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
         "projectName": "DataStructure_2",
-        "projectPath": "C:\\Users\\User\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\DataStructure_2\\DataStructure_2\\obj\\",
+        "projectPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
+        "packagesPath": "C:\\Users\\Kate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Kate\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -56,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

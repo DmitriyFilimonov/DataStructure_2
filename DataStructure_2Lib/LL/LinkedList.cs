@@ -733,8 +733,32 @@ namespace DataStructure_2Lib.LL
             }
         }
 
+        
+
         public void DeleteFromIndex(int index, int number)
         {
+            Node current = _root;
+            if (index == 0)
+            {
+                DeleteFromStart(number);
+            }
+
+            else
+            {
+
+                for (int i = 1; i < index; i++)
+                {
+                    current = current.Next;
+                }
+                Node currentT = current.Next;
+                for (int j = 0; j < number; j++)
+                {
+                    currentT = currentT.Next;
+
+                }
+                current.Next = currentT;
+                Length -= number;
+            }
 
         }
 
