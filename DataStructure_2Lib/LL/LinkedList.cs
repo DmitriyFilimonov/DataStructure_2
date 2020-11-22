@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructure_2Lib.LL
 {
-    public class LinkedList
+    public class LinkedList: IMyLists
     {
         public int Length { get; set; }
 
@@ -74,6 +74,33 @@ namespace DataStructure_2Lib.LL
             {
                 Length = 0;
                 _root = null;
+            }
+        }
+
+        public void PutFirst(int value)
+        {
+            Node tmp = _root;
+            _root = new Node(value);
+            _root.Next = tmp;
+            Length++;
+        }
+
+        public void PutLast(int value)
+        {
+            if (Length != 0)
+            {
+                Node tmp = _root;
+                while (tmp.Next != null)
+                {
+                    tmp = tmp.Next;
+                }
+                tmp.Next = new Node(value);
+                Length++;
+            }
+            else
+            {
+                _root = new Node(value);
+                Length++;
             }
         }
 
@@ -271,7 +298,7 @@ namespace DataStructure_2Lib.LL
             }
         }
         
-        public int GetMaxElement()
+        public int GetMaxElementValue()
         {
             Node current = new Node();
             current = _root;
@@ -298,7 +325,7 @@ namespace DataStructure_2Lib.LL
             return max;
         }
 
-        public int GetMinElement()
+        public int GetMinElementValue()
         {
             Node current = new Node();
             current = _root;
@@ -487,7 +514,7 @@ namespace DataStructure_2Lib.LL
             }
         }
 
-        public void DeleteFirstByValue(int value)
+        public void DeleteByValue(int value)
         {
 
             if (Length > 0)
@@ -516,7 +543,7 @@ namespace DataStructure_2Lib.LL
             }
         }
 
-        public void DeleteAllByValue(int value)
+        public void DeleteEveryByValue(int value)
         {
             
             if (Length > 0)
@@ -738,28 +765,28 @@ namespace DataStructure_2Lib.LL
         public void DeleteFromIndex(int index, int number)
         {
             Node current = _root;
+            
             if (index == 0)
             {
                 DeleteFromStart(number);
             }
-
             else
             {
-
                 for (int i = 1; i < index; i++)
                 {
                     current = current.Next;
                 }
+                
                 Node currentT = current.Next;
+                
                 for (int j = 0; j < number; j++)
                 {
                     currentT = currentT.Next;
-
                 }
+                
                 current.Next = currentT;
                 Length -= number;
             }
-
         }
 
         public override bool Equals(object obj)

@@ -40,6 +40,31 @@ namespace LLTests
 
                 Assert.AreEqual(expected, actual);
             }
+            [TestCase(new int[] { }, 1, new int[] { 1 })]
+            [TestCase(new int[] { 2 }, 1, new int[] { 1, 2 })]
+            [TestCase(new int[] { 2, 4, -5 }, 1, new int[] { 1, 2, 4, -5 })]
+            public void PutFirstTest(int[] arrayForActual, int value, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.PutFirst(value);
+
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(new int[] { }, 1, new int[] { 1 })]
+            [TestCase(new int[] { 2 }, 1, new int[] { 2, 1 })]
+            [TestCase(new int[] { 2, 4, -5 }, 1, new int[] { 2, 4, -5, 1 })]
+            public void PutLastTest(int[] arrayForActual, int value, int[] arrayForExpected)
+            {
+                LinkedList actual = new LinkedList(arrayForActual);
+                LinkedList expected = new LinkedList(arrayForExpected);
+
+                actual.PutLast(value);
+
+                Assert.AreEqual(expected, actual);
+            }
 
             [TestCase(new int[] { 1, 2, 3 }, 1, 4, new int[] { 1, 4, 2, 3 })]
             [TestCase(new int[] { 1, 2, 3 }, 0, 4, new int[] { 4, 1, 2, 3 })]
@@ -207,19 +232,19 @@ namespace LLTests
             [TestCase(new int[] { -4 }, -4)]
             [TestCase(new int[] { 0 }, 0)]
             [TestCase(new int[] { 0, 0 }, 0)]
-            public void GetMaxElementTest(int[] arrayForActual, int expected)
+            public void GetMaxElementValueTest(int[] arrayForActual, int expected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
 
-                Assert.AreEqual(expected, actual.GetMaxElement());
+                Assert.AreEqual(expected, actual.GetMaxElementValue());
             }
 
             [TestCase(new int[] { })]
-            public void GetMaxElementTestNegative(int[] arrayForActual)
+            public void GetMaxElementValueTestNegative(int[] arrayForActual)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
 
-                Assert.Throws<NullReferenceException>(() => actual.GetMaxElement());
+                Assert.Throws<NullReferenceException>(() => actual.GetMaxElementValue());
             }
 
             [TestCase(new int[] { 1, 4, 8, 5 }, 1)]
@@ -228,20 +253,20 @@ namespace LLTests
             [TestCase(new int[] { -4 }, -4)]
             [TestCase(new int[] { 0 }, 0)]
             [TestCase(new int[] { 1, 0, -1, 1 }, -1)]
-            public void GetMinElementTest(int[] arrayForActual, int expected)
+            public void GetMinElementValueTest(int[] arrayForActual, int expected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
 
 
-                Assert.AreEqual(expected, actual.GetMinElement());
+                Assert.AreEqual(expected, actual.GetMinElementValue());
             }
 
             [TestCase(new int[] { })]
-            public void GetMinElementTestNegative(int[] arrayForActual)
+            public void GetMinElementValueTestNegative(int[] arrayForActual)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
 
-                Assert.Throws<NullReferenceException>(() => actual.GetMinElement());
+                Assert.Throws<NullReferenceException>(() => actual.GetMinElementValue());
             }
 
             [TestCase(new int[] { -4 }, 0)]
@@ -309,12 +334,12 @@ namespace LLTests
             [TestCase(new int[] { 2, 1, 3, 2, 4 }, 4, new int[] { 2, 1, 3, 2 })]
             [TestCase(new int[] { 2, 8, 3, 2, 1 }, 1, new int[] { 2, 8, 3, 2 })]
             [TestCase(new int[] { }, 3, new int[] { })]
-            public void DeleteFirstByValue(int[] arrayForActual, int value, int[] arrayForExpected)
+            public void DeleteByValue(int[] arrayForActual, int value, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
                 LinkedList expected = new LinkedList(arrayForExpected);
 
-                actual.DeleteFirstByValue(value);
+                actual.DeleteByValue(value);
 
                 Assert.AreEqual(expected, actual);
             }
@@ -323,12 +348,12 @@ namespace LLTests
             [TestCase(new int[] { 2, 1, 3, 2, 1 }, 3, new int[] { 2, 1, 2, 1 })]
             [TestCase(new int[] { 2, 1, 3, 2, 1 }, 1, new int[] { 2, 3, 2 })]
             [TestCase(new int[] { }, 3, new int[] { })]
-            public void DeleteAllBuValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
+            public void DeleteEveryBuValueTest(int[] arrayForActual, int value, int[] arrayForExpected)
             {
                 LinkedList actual = new LinkedList(arrayForActual);
                 LinkedList expected = new LinkedList(arrayForExpected);
 
-                actual.DeleteAllByValue(value);
+                actual.DeleteEveryByValue(value);
 
                 Assert.AreEqual(expected, actual);
             }

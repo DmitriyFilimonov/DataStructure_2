@@ -2,9 +2,9 @@
 
 namespace DataStructure_2Lib
 {
-    public class ArrayList
+    public class ArrayList: IMyLists
     {
-        public int Length { get; private set; } //полезная длина (для пользователя)
+        public int Length { get; protected set; } //полезная длина (для пользователя)
 
         private int[] _array; //массив внутри списка
         private int _ArrayLength //полная длина
@@ -317,7 +317,30 @@ namespace DataStructure_2Lib
             }
         }
 
+        public void PutArrayToEnd(int[] argumentArray)
+        {
 
+        }
+        public void PutArrayToStart(int[] argumentArray)
+        {
+
+        }
+        public void PutArrayToIndex(int index, int[] argumentArray)
+        {
+
+        }
+        public void DeleteFromEnd(int number)
+        {
+
+        }
+        public void DeleteFromStart(int number)
+        {
+
+        }
+        public void DeleteFromIndex(int index, int number)
+        {
+
+        }
 
         public override bool Equals(object obj)//для тестов, переделка системного метода
         {

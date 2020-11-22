@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructure_2Lib.DoubleLL
 {
-    public class DoubleLinkedList
+    public class DoubleLinkedList: IMyLists
     {
         int Length;
         
@@ -110,6 +110,88 @@ namespace DataStructure_2Lib.DoubleLL
                     }
                 }
             }
+        }
+
+        public void PutLast(int value)
+        {
+
+        }
+        
+        public void PutFirst(int value)
+        {
+
+        }
+        public void DeleteLast()
+        {
+
+        }
+        public void DeleteFirst()
+        {
+
+        }
+        public void DeleteByIndex(int index)
+        {
+
+        }
+        public void Reverse()
+        {
+
+        }
+        public int GetMaxElementValue()
+        {
+            return 1;
+        }
+        public int GetMinElementValue()
+        {
+            return 1;
+        }
+        public int GetIndexOfMaxElement()
+        {
+            return 1;
+        }
+        public int GetIndexOfMinElement()
+        {
+            return 1;
+        }
+        public void SortAscend()
+        {
+            
+        }
+        public void SortDescend()
+        {
+            
+        }
+        public void DeleteByValue(int value)
+        {
+            
+        }
+        public void DeleteEveryByValue(int value)
+        {
+            
+        }
+        public void PutArrayToEnd(int[] argumentArray)
+        {
+            
+        }
+        public void PutArrayToStart(int[] argumentArray)
+        {
+            
+        }
+        public void PutArrayToIndex(int index, int[] argumentArray)
+        {
+           
+        }
+        public void DeleteFromEnd(int number)
+        {
+            
+        }
+        public void DeleteFromStart(int number)
+        {
+            
+        }
+        public void DeleteFromIndex(int index, int number)
+        {
+            
         }
         public override bool Equals(object obj)
         {
