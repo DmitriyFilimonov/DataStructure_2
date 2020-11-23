@@ -11,6 +11,13 @@ namespace DataStructure_2Lib.DoubleLL
         DoubleNode _root;
         DoubleNode _tail;
 
+        public DoubleLinkedList(int value)
+        {
+            _root = new DoubleNode(value);
+            _tail = _root;
+            Length = 1;
+        }
+
         public DoubleLinkedList(int[] array)
         {
             if (array.Length != 0)
@@ -79,7 +86,7 @@ namespace DataStructure_2Lib.DoubleLL
                 
             }
 
-            set //должен ли быть private?
+            set 
             {
                 if ((index >= Length) || (index < 0))
                 {
@@ -89,11 +96,11 @@ namespace DataStructure_2Lib.DoubleLL
                 {
                     int worstCase = (Length / 2 + 1);
 
-                    if (index <= worstCase)
+                    if (index < worstCase)
                     {
 
                         DoubleNode tmp = _root;
-                        for (int i = 1; i <= worstCase; i++)
+                        for (int i = 1; i <= index; i++)
                         {
                             tmp = tmp.Next;
                         }
@@ -102,7 +109,7 @@ namespace DataStructure_2Lib.DoubleLL
                     else
                     {
                         DoubleNode tmp = _tail;
-                        for (int i = Length; i > worstCase; i--)
+                        for (int i = Length; i > index+1; i--)
                         {
                             tmp = tmp.Pre;
                         }
@@ -114,7 +121,21 @@ namespace DataStructure_2Lib.DoubleLL
 
         public void PutLast(int value)
         {
-
+            if (Length != 0)
+            {
+                DoubleNode tmp = _tail;
+                tmp.Next = new DoubleNode(value);
+                tmp.Next.Pre = tmp;
+                tmp = tmp.Next;
+                _tail = tmp;
+                Length++;
+            }
+            else
+            {
+                _root = new DoubleNode(value);
+                _tail = _root;
+                Length = 1;
+            }
         }
         
         public void PutFirst(int value)
@@ -236,6 +257,23 @@ namespace DataStructure_2Lib.DoubleLL
             }
 
             return true;
+        }
+
+        public override string ToString()
+        {
+            string s = "";
+
+            if (_root != null)
+            {
+                DoubleNode tmp = _root;
+
+                while (tmp != null)
+                {
+                    s += tmp.Value + ";";
+                    tmp = tmp.Next;
+                }
+            }
+            return s;
         }
     }
 }

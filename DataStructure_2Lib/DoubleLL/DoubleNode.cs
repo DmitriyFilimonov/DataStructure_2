@@ -35,7 +35,7 @@ namespace DataStructure_2Lib.DoubleLL
             Value = doubleNode.Value;
         }
 
-        public override string ToString()
+        public override string ToString()//это что такое??
         {
             return $"{Value}";
         }
