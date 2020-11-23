@@ -6,7 +6,7 @@ namespace DataStructure_2Lib.DoubleLL
 {
     public class DoubleLinkedList: IMyLists
     {
-        int Length;
+        public int Length { get; protected set; }
         
         DoubleNode _root;
         DoubleNode _tail;

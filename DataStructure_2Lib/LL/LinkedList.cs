@@ -6,7 +6,7 @@ namespace DataStructure_2Lib.LL
 {
     public class LinkedList: IMyLists
     {
-        public int Length { get; set; }
+        public int Length { get; protected set; }
 
         private Node _root;
 

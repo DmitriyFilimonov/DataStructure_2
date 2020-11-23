@@ -6,7 +6,7 @@ namespace DataStructure_2Lib
 {
     public interface IMyLists
     {
-        //public int Length;
+        public int Length { get; }
         public void PutLast(int value);//добавить значение в конец
         public int this[int i] { get; set; }//индексатор
         public void PutFirst(int value);
