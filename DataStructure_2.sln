@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure_2", "DataStructure_2\DataStructure_2.csproj", "{03D10A10-75B8-4852-AB98-DD3096E7FA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "DataStructure_2\Console.csproj", "{03D10A10-75B8-4852-AB98-DD3096E7FA57}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure_2Lib", "DataStructure_2Lib\DataStructure_2Lib.csproj", "{CFC496CD-8C96-4041-B8B1-783694D04262}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLTests", "LLTests\LLTests.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrLTests", "ArrayListTests\ArrLTests.csproj", "{89BA1517-602B-451C-A158-CD09EB8C885B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleLLTests", "DoubleLLTests\DoubleLLTests.csproj", "{B3155976-300E-4332-AA63-637A2CEF4750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleLLTests", "DoubleLLTests\DoubleLLTests.csproj", "{B3155976-300E-4332-AA63-637A2CEF4750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

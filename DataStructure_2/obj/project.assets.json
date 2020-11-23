@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
-      "projectName": "DataStructure_2",
-      "projectPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\DataStructure_2.csproj",
+      "projectUniqueName": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\Console.csproj",
+      "projectName": "Console",
+      "projectPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\Console.csproj",
       "packagesPath": "C:\\Users\\Kate\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2\\obj\\",
       "projectStyle": "PackageReference",
