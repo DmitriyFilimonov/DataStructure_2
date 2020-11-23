@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using DataStructure_2Lib;
 using DataStructure_2Lib.DoubleLL;
 
 namespace DoubleLLTests
@@ -19,7 +20,7 @@ namespace DoubleLLTests
         [TestCase(new int[] { 1, 0, 8, -5, 5 }, 1, 0)]
         public void GetterTest(int[] inputArr, int index, int expected)
         {
-            DoubleLinkedList actualList = new DoubleLinkedList(inputArr);
+            IMyLists actualList = new DoubleLinkedList(inputArr);
             int actual = actualList[index];
 
             Assert.AreEqual(expected, actual);
@@ -32,8 +33,8 @@ namespace DoubleLLTests
         [TestCase(new int[] { 1, 0, 8, -5, 5 }, 1, 12, new int[] { 1, 12, 8, -5, 5 })]
         public void SetterTest(int[] inputArr, int index, int value, int[] expectedArr)
         {
-            DoubleLinkedList actual = new DoubleLinkedList(inputArr);
-            DoubleLinkedList expected = new DoubleLinkedList(expectedArr);
+            IMyLists actual = new DoubleLinkedList(inputArr);
+            IMyLists expected = new DoubleLinkedList(expectedArr);
             actual[index] = value;
 
             Assert.AreEqual(expected, actual);
@@ -44,8 +45,8 @@ namespace DoubleLLTests
         [TestCase(new int[] { 1, 0 }, 1, new int[] { 1, 0, 1 })]
         public void PutLastTest(int[] inputList, int value, int[] expectedList)
         {
-            DoubleLinkedList actual = new DoubleLinkedList(inputList);
-            DoubleLinkedList expected = new DoubleLinkedList(expectedList);
+            IMyLists actual = new DoubleLinkedList(inputList);
+            IMyLists expected = new DoubleLinkedList(expectedList);
             
             actual.PutLast(value);
 

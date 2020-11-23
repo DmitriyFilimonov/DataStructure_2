@@ -21,6 +21,13 @@ namespace DataStructure_2Lib
             Length = 0;
         }
 
+        public ArrayList(int value)//конструктор пустого списка
+        {
+            _array = new int[1];
+            _array[0] = value;
+            Length = 1;
+        }
+
         public ArrayList(int[] list)//конструктор заполняющий список N элементами
         {
             if (list.Length > 0)

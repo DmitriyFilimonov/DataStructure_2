@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "DataStructure_2Lib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/DataStructure_2Lib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStructure_2Lib.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DataStructure_2Lib/1.0.0": {
+      "type": "project",
+      "path": "../DataStructure_2Lib/DataStructure_2Lib.csproj",
+      "msbuildProject": "../DataStructure_2Lib/DataStructure_2Lib.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "DataStructure_2Lib >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Kate\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2Lib\\DataStructure_2Lib.csproj": {
+              "projectPath": "C:\\Users\\Kate\\source\\repos\\DataStructure_2\\DataStructure_2Lib\\DataStructure_2Lib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
