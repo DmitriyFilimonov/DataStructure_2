@@ -298,6 +298,7 @@ namespace ArrayListTests
 
         [TestCase(new int[] { 2, 8, 16, 2 }, new int[] { 2 }, new int[] { 2, 8, 16, 2, 2 })]
         [TestCase(new int[] { }, new int[] { 1}, new int[] { 1})]
+        [TestCase(new int[] { }, new int[] { }, new int[] { })]
         [TestCase(new int[] { 2, 8, 16, 2 }, new int[] { 2, 4, 19 }, new int[] { 2, 8, 16, 2, 2, 4, 19 })]
         [TestCase(new int[] { }, new int[] { 1, 2, 15 }, new int[] { 1, 2, 15 })]
         public void PutArrayToEndTest(int[] arrayForActual, int[] argumentArray, int[] arrayForExpected)
