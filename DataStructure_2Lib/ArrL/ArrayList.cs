@@ -326,7 +326,15 @@ namespace DataStructure_2Lib
 
         public void PutArrayToEnd(int[] argumentArray)
         {
-
+            if (_ArrayLength <= Length)
+            {
+                IncreaseLength(argumentArray.Length);
+                Length += argumentArray.Length;
+            }
+            for (int i=Length-argumentArray.Length; i<Length; i++)
+            {
+                _array[i] = argumentArray[i - (Length - argumentArray.Length)];
+            }
         }
         public void PutArrayToStart(int[] argumentArray)
         {
